@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\API\AuthUserController;
+use App\Http\Controllers\AppointmentController;
+use App\Http\Controllers\AppointmentsController;
 use App\Http\Controllers\HealthcareProfessionalController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -30,15 +32,16 @@ Route::post('login', [AuthUserController::class, 'login'])->name('login');
 Route::post('logout', [AuthUserController::class, 'logout'])->name('logout');
 
 
-Route::middleware('auth:api')->group(function () {
+//Route::middleware('auth:api')->group(function () {
 
     Route::get('/healthcare-professionals', [HealthcareProfessionalController::class, 'index']);
 
-    Route::post('/appointments', 'AppointmentController@store');
+    Route::post('book-appointment', [AppointmentController::class, 'bookAppointment']);
+
+    Route::get('user-appointments', [AppointmentsController::class, 'getUserAppointments']);
     
-    Route::get('/appointments', 'AppointmentController@index');
-    
-    Route::delete('/appointments/{appointment}', 'AppointmentController@destroy');
-    
-    Route::put('/appointments/{appointment}/complete', 'AppointmentController@complete');
-});
+    Route::post('complete-appointment', [AppointmentsController::class, 'completeAppointment']);
+
+    Route::delete('cancle-appointment/{appointment}', [AppointmentsController::class, 'cancleAppointment']);
+
+//});

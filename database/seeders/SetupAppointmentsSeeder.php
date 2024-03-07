@@ -17,24 +17,36 @@ class SetupAppointmentsSeeder extends Seeder
             [
                 'user_id' => 1,
                 'healthcare_professional_id' => 1,
-                'appointment_start_time' => '2024-03-10 15:00:00',
-                'appointment_end_time' => '2024-03-10 16:00:00',
+                'appointment_date' => '2024-03-10',
+                'appointment_start_time' => '15:00',
+                'appointment_end_time' => '16:00',
                 'status' => 'booked'
             ],
             [
                 'user_id' => 1,
                 'healthcare_professional_id' => 2,
-                'appointment_start_time' => '2024-03-15 07:00:00',
-                'appointment_end_time' => '2024-03-15 07:30:00',
+                'appointment_date' => '2024-03-15',
+                'appointment_start_time' => '07:00',
+                'appointment_end_time' => '07:30',
                 'status' => 'booked'
             ],
             [
                 'user_id' => 2,
                 'healthcare_professional_id' => 1,
-                'appointment_start_time' => '2024-03-12 10:00:00',
-                'appointment_end_time' => '2024-03-12 11:00:00',
+                'appointment_date' => '2024-03-12',
+                'appointment_start_time' => '10:00',
+                'appointment_end_time' => '11:00',
                 'status' => 'booked'
-            ]
+            ],
+            [
+                'user_id' => 2,
+                'healthcare_professional_id' => 2,
+                'appointment_date' => '2024-02-02',
+                'appointment_start_time' => '8:00',
+                'appointment_end_time' => '8:45',
+                'status' => 'cancelled'
+            ],
+
         ]);
     }
 }

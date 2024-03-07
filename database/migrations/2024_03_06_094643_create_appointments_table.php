@@ -15,8 +15,9 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('healthcare_professional_id');
-            $table->dateTime('appointment_start_time');
-            $table->dateTime('appointment_end_time');
+            $table->date('appointment_date');
+            $table->time('appointment_start_time');
+            $table->time('appointment_end_time');
             $table->string('status')->nullable()->comment('booked, completed, cancelled');
 
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
