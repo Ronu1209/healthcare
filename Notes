@@ -1,0 +1,36 @@
+
+
+//Change DB credentials in .env file
+
+>> Execute migration : php artisan migrate
+
+>> Execute seeders :	php artisan db:seed --class=SetupUsersSeeder
+						php artisan db:seed --class=SetupHealthcareProfessionalsSeeder
+						php artisan db:seed --class=SetupAppointmentsSeeder
+
+
+
+
+
+chatGPT 
+
+Develop a RESTful API using PHP and Laravel that allows users to book, view, and cancel healthcare appointments. The API should interact with a MySQL database to store and retrieve data.
+
+User: With attributes like id, name, email.
+Healthcare Professional: With attributes like id, name, specialty.
+Appointment: With attributes like id, user_id, healthcare_professional_id, appointment_start_time, appointment_end_time, status (booked, completed, cancelled).
+
+User registration and login (with token-based authentication).
+List all available healthcare professionals.
+Book an appointment (should check for availability).
+View all appointments for a user.
+Cancel an appointment (with constraints, e.g., not allowed within 24 hours of the appointment time).
+(Optional) Mark an appointment as completed.
+
+Ensure no double booking for healthcare professionals.
+Users can only view or cancel their appointments.
+Implement basic validation (e.g., future dates for appointments).
+
+
+
+
